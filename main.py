@@ -9,7 +9,7 @@ app.events_list = []
 
 @app.get("/start")
 def zadanie3_1():
-
+    return {"start": "1999-01-01"}
 
 
 #
