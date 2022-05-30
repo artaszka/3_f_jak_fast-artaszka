@@ -1,4 +1,5 @@
-from fastapi import FastAPI, status, HTTPException, Request, Query
+from fastapi import FastAPI, status, HTTPException, Request, Query, responses
+from fastapi.responses import HTMLResponse
 from typing import List
 
 import datetime
@@ -7,11 +8,16 @@ from pydantic import BaseModel
 app = FastAPI()
 app.events_list = []
 
-@app.get("/start")
+@app.get("/start", response_class=HTMLResponse)
 def zadanie3_1():
-    return {"start": "1999-01-01"}
-
-
+    return """
+    <html>
+    <head>
+    </head>
+    <body>
+    <h1>The unix epoch started at 1970-01-01</h1>
+    </body>
+    </html>
 #
 # @app.get("/")
 # def zadanie1_1():
