@@ -4,6 +4,9 @@ from typing import List
 
 import datetime
 from pydantic import BaseModel
+class HerokuApp:
+    app_url = "https://git.heroku.com/arturp.git"  # Fill your heroku app url here
+
 
 app = FastAPI()
 app.events_list = []
@@ -13,11 +16,15 @@ def zadanie3_1():
     return """
     <html>
     <head>
+        <title>Some HTML in here</title>
     </head>
     <body>
-    <h1>The unix epoch started at 1970-01-01</h1>
+        <h1>The unix epoch started at 1970-01-01</h1>
     </body>
-    </html>
+    </html>"""
+    
+    
+    
 #
 # @app.get("/")
 # def zadanie1_1():
